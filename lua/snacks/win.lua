@@ -1143,8 +1143,8 @@ function M:win_opts()
   end
 
   local dim = self:dim()
-  opts.height, opts.width = dim.height, dim.width
-  opts.row, opts.col = dim.row, dim.col
+  opts.height, opts.width = math.floor(dim.height), math.floor(dim.width)
+  opts.row, opts.col = math.floor(dim.row), math.floor(dim.col)
 
   if vim.fn.has("nvim-0.10") == 0 then
     opts.footer, opts.footer_pos = nil, nil

@@ -452,7 +452,7 @@ M.actions.gh_start_review = {
     M.run(item, {
       api = {
         endpoint = "/repos/{repo}/pulls/{number}/reviews",
-        input = { commit_id = item.headRefOid },
+        input = { commit_id = item.headRefOid or vim.NIL },
       },
       success = "Started pending review for PR #{number}",
     }, ctx)
